@@ -13,5 +13,5 @@ YEAR=what year of aoc you want
 EOF
 
 # get day input for day 1 (or any other day)
-./in.py 1 > 1.in
+python ./in.py 1 > 1.in
 ```
