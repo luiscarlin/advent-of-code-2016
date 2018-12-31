@@ -13,5 +13,5 @@ YEAR=what year of AoC are you doing?
 EOF
 
 # get day input for day 1 (or any other day)
-python ./in.py 1 > 1.in
+python ./get_input.py 1 > 1.in
 ```
