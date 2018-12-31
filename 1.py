@@ -30,9 +30,11 @@ def find_last_position(quit_on_duplicate=False):
 
   return (row, col)
 
+def get_distance(source, destination):
+  return abs(source[0] - destination[0]) + abs(source[1] - destination[1])
 
 last_position = find_last_position()
-print('part 1', abs(0 - last_position[0]) + abs(0 - last_position[1]))
+print('part 1', get_distance((0, 0), last_position))
 
 first_repeated = find_last_position(quit_on_duplicate = True)
-print('part 2', abs(0 - first_repeated[0]) + abs(0 - first_repeated[1]))
+print('part 2', get_distance((0, 0), first_repeated))
