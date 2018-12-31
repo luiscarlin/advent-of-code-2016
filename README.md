@@ -8,8 +8,8 @@ virtualenv -p python3 .py3env && source .py3env/bin/activate && pip install -r r
 
 # set some env vars
 cat <<EOF >.env
-COOKIE=your aoc cookie
-YEAR=what year of aoc you want
+COOKIE=your AoC cookie
+YEAR=what year of AoC are you doing?
 EOF
 
 # get day input for day 1 (or any other day)
