@@ -57,4 +57,4 @@ for room in rooms:
     name = shift_by_one(name)
 
   if 'orth' in name:
-    print(name, id)
+    print('part 2', name, id)
