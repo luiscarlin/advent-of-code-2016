@@ -1,28 +1,22 @@
-'''
-password is 8 chars
-
-password = ''
-while len(password) != 8:
-  poss_pass_char = md5_hash(door_id, int_starting_at_0)
-
-  if hex(poss_pass_char[0:5]) == "00000":
-    next_char_in_pass = poss_pass_char[6]
-    password += next_char_in_pass
-'''
-
 import hashlib
 
-door_id = 'cxdnnyjw'
 
-password = ''
+def get_password(sequential):
+  door_id = 'cxdnnyjw'
 
-i = 0
-while len(password) != 8:
-  hash = hashlib.md5('{}{}'.format(door_id, i).encode('utf-8')).hexdigest()
+  password = ''
 
-  if hash.startswith('00000'):
-    password += hash[5]
+  i = 0
+  while len(password) != 8:
+    hash = hashlib.md5('{}{}'.format(door_id, i).encode('utf-8')).hexdigest()
 
-  i += 1
+    if hash.startswith('00000'):
+      if sequential:
+        password += hash[5]
+      else:
+        # do it based on position
 
-print('part 1', password)
+    i += 1
+  return password
+
+print('part 1', get_password(sequential=True))
