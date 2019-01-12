@@ -1,20 +1,28 @@
 from collections import defaultdict
 
-lines = []
 
-for line in open('6.in').read().split('\n'):
-  if line:
-    lines.append(line)
+def find_message(using_max):
+  lines = []
 
-message = ''
+  for line in open('6.in').read().split('\n'):
+    if line:
+      lines.append(line)
 
-for idx in range(8):
-  totals_col = defaultdict(int)
+  message = ''
 
-  for line in lines:
-    totals_col[line[idx]] += 1
+  for idx in range(8):
+    totals_col = defaultdict(int)
 
-  char = max(totals_col, key=totals_col.get)
-  message += char
+    for line in lines:
+      totals_col[line[idx]] += 1
 
-print('part 1', message)
+    if using_max:
+      char = max(totals_col, key=totals_col.get)
+    else:
+      char = min(totals_col, key=totals_col.get)
+    message += char
+
+  return message
+
+print('part 1', find_message(using_max=True))
+print('part 2', find_message(using_max=False))
