@@ -27,4 +27,8 @@ def support_tls():
         num_ips += 1
   return num_ips
 
+def support_ssl():
+  return 'hello'
+
 print('part 1', support_tls())
+print('part 2', support_ssl())
