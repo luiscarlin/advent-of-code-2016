@@ -8,7 +8,8 @@
 - rotate column x=A by B shifts all of the pixels in column A (0 is the left column) down by B pixels. Pixels that would fall off the bottom appear at the top of the column.
 '''
 
-screen = [['.'] * 6] * 50
+screen = [['.'] * 6 for i in range(50)]
+
 
 def show_screen():
   for row in range(6):
@@ -17,11 +18,15 @@ def show_screen():
     print()
 
 def rect(w, h):
-  pass
+  for col in range(w):
+    for row in range(h):
+      screen[col][row] = '#'
 
 for line in open('8.in'):
   if line:
     if 'rect' in line:
-      w,h = line.split()[1].split('x')
+      w,h = list(map(int, line.split()[1].split('x')))
       rect(w, h)
+      break
 
+show_screen()
