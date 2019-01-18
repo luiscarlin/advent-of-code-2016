@@ -62,4 +62,6 @@ for line in open('8.in'):
       rotate_row(row, offset)
 
 print('part 1',count_lit())
+
+print('part 2 => read what this outputs')
 show_screen()
